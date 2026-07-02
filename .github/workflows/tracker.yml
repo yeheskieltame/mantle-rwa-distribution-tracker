@@ -1,14 +1,14 @@
 name: RWA Distribution Tracker
 
 # Weekly markdown digest (Mondays) + daily threshold-alert check, committed back to the repo.
-# Secrets (repo Settings > Secrets and variables > Actions) — both OPTIONAL:
-#   ALERT_WEBHOOK_URL  — Discord/Slack webhook for alerts
-#   DUNE_API_KEY       — enables the Dune-vs-live cross-check (free tier works)
+# Secrets (repo Settings > Secrets and variables > Actions), both optional:
+#   ALERT_WEBHOOK_URL: Discord/Slack webhook for alerts
+#   DUNE_API_KEY:      enables the Dune-vs-live cross-check (free tier works)
 
 on:
   schedule:
     - cron: "0 1 * * *"    # daily 01:00 UTC (08:00 WIB); Monday = full digest, other days = alert check
-  workflow_dispatch: {}     # manual "Run workflow" button — always a full digest
+  workflow_dispatch: {}     # manual "Run workflow" button, always a full digest
 
 permissions:
   contents: write            # allow committing the digest + state back to the repo

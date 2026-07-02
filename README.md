@@ -1,73 +1,71 @@
 # Mantle RWA Distribution Tracker
 
-Dune dashboard + automation agent that measure **distribution, not just supply**, for tokenized real-world assets (RWA) on Mantle. Follow-up to the Research Challenge thesis: **supply ≠ adoption.**
+A Dune dashboard and an automation agent that measure distribution, not just supply, for tokenized real-world assets (RWA) on Mantle. Follow-up to the Research Challenge thesis: supply is not adoption.
 
-### ▶ Live dashboard: https://dune.com/yeheskiel/mantle-rwa-distribution-tracker
-### ▶ Research findings: [FINDINGS.md](FINDINGS.md)
+Live dashboard: https://dune.com/yeheskiel/mantle-rwa-distribution-tracker
 
-**Headline (Mantle, snapshot 2026-07-02):**
-- **368** xStocks issued on Mantle — only **1** (NVDAx) clears the 500-holder distribution bar; **15** have ≥10 holders.
-- **926** wallets hold any xStock — **88% acquired in a single 4-week spike**, now attributed on-chain to the **Bybit ⇄ Mantle xStocks gateway opening (Apr 10, 2026)**: Bybit's Mantle hot wallet delivered first xStocks to 462 of the 816 cohort wallets, then the wave stopped.
-- Those users stuck: **98.3% of the Bybit-window cohort still holds** — CEX-gateway demand is buy-and-hold, not farming. Meanwhile LP incentives (Project X, 100k MNT) produced churn, not holders.
-- **45.6%** of holder wallets arrived on Mantle *with* their first xStock (421 new wallets in 7 months); the rest are OG Mantle users (median **459 days** old).
-- **SPCXx** (SpaceX xStock): 30,000 net supply, **99.2% in the issuer wallet → external float 0.8%**, 26 holders.
+Research findings with full sources: [FINDINGS.md](FINDINGS.md)
 
-*The supply is here. The demand — 26 million Indonesian retail investors among them — is not. That gap is the opportunity.*
+Headline results (Mantle, snapshot 2026-07-02):
 
----
+- 368 xStocks issued on Mantle. Only one (NVDAx) clears the 500-holder distribution bar; 15 have at least 10 holders.
+- 926 wallets hold any xStock. 88% were acquired in a single four-week window, attributed on-chain to the opening of the Bybit gateway for xStocks on Mantle (April 10, 2026): Bybit's Mantle hot wallet delivered first xStocks to 462 of the 816 cohort wallets, then the wave stopped.
+- Those users stuck. 98.3% of the Bybit-window cohort still holds, which is buy-and-hold demand rather than farming. By contrast, LP incentives (Project X, up to 100,000 MNT) produced trading churn, not holders.
+- 45.6% of holder wallets arrived on Mantle with their first xStock (421 new wallets in seven months). The rest are long-time Mantle users (median wallet age 459 days).
+- SPCXx (the SpaceX xStock): 30,000 net supply, 99.2% in the issuer wallet, external float 0.8%, 26 holders.
 
-## What it shows
+The supply is here. The demand, including Indonesia's roughly 26 million retail stock investors, is not. That gap is the opportunity.
 
-The **hero metric is external float %** — the share of net supply held *outside* the issuer wallet. High supply + tiny external float = *issued, not adopted*.
+## What the dashboard shows
 
-**Falsifiable thresholds** — a token is genuinely distributed when: holders **> 500** · top-1 wallet **< 75%** · DEX liquidity **> $100K** (where priced).
+The hero metric is external float: the share of net supply held outside the issuer wallet. High supply with tiny external float means issued, not adopted.
 
-Dashboard sections & queries (all raw `mantle.logs`, exact 256-bit math):
+Falsifiable thresholds. A token counts as genuinely distributed when holders exceed 500, the top-1 wallet is below 75%, and DEX liquidity exceeds 100,000 USD (where priced).
 
-Dashboard sections: **① the adoption gap** · **② attribution — who opened the tap** · **③ single-token deep-dive** (token selector) · **④ issuer-driven supply** · **⑤ activity & liquidity**. Every finding in [FINDINGS.md](FINDINGS.md) has a live panel:
+Dashboard sections: (1) the adoption gap, (2) attribution, or who opened the tap, (3) single-token deep-dive with a token selector, (4) issuer-driven supply, (5) activity and liquidity. Every finding in [FINDINGS.md](FINDINGS.md) has a live panel.
 
-| § | Query | Live |
+| Section | Query | Live |
 |---|-------|------|
-| ① | Ecosystem summary — issued vs adopted counters | [7863679](https://dune.com/queries/7863679) |
-| ① | xStock ecosystem league (every xStock, ranked) | [7863671](https://dune.com/queries/7863671) |
-| ① | xStock holders over time — the 4-week spike | [7865851](https://dune.com/queries/7865851) |
-| ① | Holder acquisition — new wallets vs recycled users | [7865842](https://dune.com/queries/7865842) |
-| ② | Spike mechanism — how the cohort got its first xStock | [7866292](https://dune.com/queries/7866292) |
-| ② | Spike distributors — the Bybit hot wallet identified | [7866312](https://dune.com/queries/7866312) |
-| ② | Bybit-window cohort retention (98.3%) | [7866325](https://dune.com/queries/7866325) |
-| ③ | Concentration (holders, top-1 %, external float, net supply) | [7863618](https://dune.com/queries/7863618) |
-| ③ | External float over time *(hero)* | [7863645](https://dune.com/queries/7863645) |
-| ③ | Holders over time | [7863651](https://dune.com/queries/7863651) |
-| ④ | Mint / burn / net supply over time | [7863661](https://dune.com/queries/7863661) |
-| ⑤ | Daily activity | [7863657](https://dune.com/queries/7863657) |
-| ⑤ | DEX activity (Merchant Moe) | [7863658](https://dune.com/queries/7863658) |
+| 1 | Ecosystem summary: issued versus adopted counters | [7863679](https://dune.com/queries/7863679) |
+| 1 | xStock ecosystem league (every xStock, ranked) | [7863671](https://dune.com/queries/7863671) |
+| 1 | xStock holders over time: the four-week spike | [7865851](https://dune.com/queries/7865851) |
+| 1 | Holder acquisition: new wallets versus recycled users | [7865842](https://dune.com/queries/7865842) |
+| 2 | Spike mechanism: how the cohort got its first xStock | [7866292](https://dune.com/queries/7866292) |
+| 2 | Spike distributors: the Bybit hot wallet identified | [7866312](https://dune.com/queries/7866312) |
+| 2 | Bybit-window cohort retention (98.3%) | [7866325](https://dune.com/queries/7866325) |
+| 3 | Concentration: holders, top-1 share, external float, net supply | [7863618](https://dune.com/queries/7863618) |
+| 3 | External float over time (hero metric) | [7863645](https://dune.com/queries/7863645) |
+| 3 | Holders over time | [7863651](https://dune.com/queries/7863651) |
+| 4 | Mint, burn and net supply over time | [7863661](https://dune.com/queries/7863661) |
+| 5 | Daily activity | [7863657](https://dune.com/queries/7863657) |
+| 5 | DEX activity (Merchant Moe) | [7863658](https://dune.com/queries/7863658) |
 
-Queries are parameterized (`token_address`, `issuer_wallet`, default SPCXx) — fork any of them and change the parameter to track a different RWA.
+Queries are parameterized (`token_address`, `issuer_wallet`; default SPCXx). Fork any of them and change the parameter to track a different RWA.
 
-## Methodology & honesty notes
+## Methodology and honesty notes
 
-- **Exact 256-bit integer math** (`decimal(38,0)`, not floating point). `double` loses integer precision above ~2^53, which forces a fragile `>1e6` "dust" hack; with exact math a zero balance is exactly zero and **holder counts are exact**. Cross-checked against the Routescan API — top-1 99.2% / 26 holders matched to the decimal.
-- **Ecosystem universe** = `tokens.erc20` where `name LIKE '%xStock%'` (not `symbol LIKE '%x'`, which catches junk like `100x`, `55X`, `Arcane Flux`).
-- **External float in the league** uses each token's top holder as the issuer/treasury proxy (no per-token issuer map needed).
-- **DEX**: `dex.trades` covers Merchant Moe, Agni, Uniswap, FusionX on Mantle. **Fluxion is not indexed yet.** SPCXx is **not in the DEX price oracle**, so its DEX panel shows **trade counts**, not USD.
-- Every number carries its source + timestamp. **Not financial advice.**
+- Exact 256-bit integer math (`decimal(38,0)`, not floating point). Doubles lose integer precision above 2^53, which forces fragile dust heuristics; with exact math a zero balance is exactly zero and holder counts are exact. Cross-checked against the Routescan API: top-1 share of 99.2% and 26 holders matched to the decimal.
+- The ecosystem universe is `tokens.erc20` where the name contains "xStock". Matching on symbols ending in "x" would catch junk tokens such as `100x`, `55X` and `Arcane Flux`.
+- External float in the league table uses each token's top holder as the issuer proxy, which avoids needing a per-token issuer map.
+- DEX data: `dex.trades` covers Merchant Moe, Agni, Uniswap and FusionX on Mantle. Fluxion is not indexed yet. SPCXx is not in the DEX price oracle, so its DEX panel shows trade counts rather than USD.
+- Every number carries its source and timestamp. Not financial advice.
 
 ## Automation agent (`agent/`)
 
-Stdlib-only Python (no `pip` — students can run it as-is). Tracks **7 xStocks** out of the box (NVDAx, TSLAx, CRCLx, GOOGLx, COINx, SPCXx, AAPLx). One run does three jobs:
+Python with the standard library only (no pip, so students can run it as-is). It tracks seven xStocks out of the box (NVDAx, TSLAx, CRCLx, GOOGLx, COINx, SPCXx, AAPLx). One run does three jobs:
 
-- **DIGEST** — weekly markdown brief to `agent/reports/YYYY-MM-DD.md` (raw material for a weekly X thread). Holder counts are exact up to 1,000 (paginated Routescan; `N+` = lower bound beyond that).
-- **ALERTS** — webhook ping when a falsifiable threshold is crossed: top wallet < 75% 🚨, holders reach 500+ 🎯, top-1 drops ≥1 pt 📉, holders jump ≥25 📈. *(On its first multi-token run the agent detected NVDAx crossing both thresholds — see [FINDINGS.md](FINDINGS.md) F7.)*
-- **SYNC** — cross-checks the live Routescan number against the Dune concentration query and flags divergence > 2 pts.
+- DIGEST: a weekly markdown brief written to `agent/reports/YYYY-MM-DD.md`, raw material for a weekly X thread. Holder counts are exact up to 1,000 via paginated Routescan calls; beyond that the count is reported as a lower bound with a plus sign.
+- ALERTS: a webhook ping when a falsifiable threshold is crossed: top wallet below 75%, holders reaching 500 or more, top-1 dropping at least one point, or holders jumping by 25 or more. On its first multi-token run the agent detected NVDAx crossing both thresholds; see [FINDINGS.md](FINDINGS.md), finding F8.
+- SYNC: a cross-check of the live Routescan number against the Dune concentration query, flagging divergence above two points.
 
-The alert path is end-to-end tested: a local stdlib webhook receiver + seeded state force every alert type through a real HTTP POST.
+The alert path is tested end to end: a local standard-library webhook receiver plus seeded state force every alert type through a real HTTP POST.
 
 Run locally: `python3 agent/tracker_agent.py`
 
-Automated (free) via GitHub Actions — the workflow is already included at `.github/workflows/tracker.yml`: full digest every Monday 08:00 WIB, daily alert check the rest of the week, plus a manual "Run workflow" button. Optional repo secrets: `ALERT_WEBHOOK_URL` (Discord/Slack), `DUNE_API_KEY` (enables the sync-check; without it the agent silently uses Routescan only).
+Automation runs free on GitHub Actions; the workflow ships at `.github/workflows/tracker.yml`. It produces a full digest every Monday at 08:00 WIB and an alert check on the other days, and it has a manual "Run workflow" button. Optional repository secrets: `ALERT_WEBHOOK_URL` (Discord or Slack) and `DUNE_API_KEY` (enables the sync check; without it the agent quietly uses Routescan only).
 
 ## Add a new token
 
-Edit `agent/config.json` → add an entry under `tokens` (address + issuer wallet from Mantlescan). On Dune, just change the query `token_address` parameter.
+Edit `agent/config.json` and add an entry under `tokens` (address plus issuer wallet from Mantlescan). On Dune, change the `token_address` query parameter.
 
-*Not financial advice.*
+Not financial advice.

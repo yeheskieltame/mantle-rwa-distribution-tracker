@@ -3,7 +3,7 @@
 -- Dashboard widgets: counters (holders, top-1 %, external float %) + net supply
 -- Params: {{token_address}} default SPCXx 0x68fa...ce28 ; {{issuer_wallet}} default 0x5f7a...a2aD
 --
--- Balances are reconstructed in EXACT 256-bit integer math via decimal(38,0) — NOT double.
+-- Balances are reconstructed in exact 256-bit integer math via decimal(38,0), not double.
 -- double loses integer precision above ~2^53, which is why the old ">1e6 dust" hack existed;
 -- with exact math a zero balance is exactly zero and holder counts are exact.
 WITH flows AS (

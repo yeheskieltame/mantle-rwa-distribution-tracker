@@ -1,4 +1,4 @@
--- Q10: xStock holders over time (ecosystem) — is the gap closing or widening? (NEW)
+-- Q10: xStock holders over time (ecosystem). Is the gap closing or widening?
 -- Live: https://dune.com/queries/7865851  (dashboard: https://dune.com/yeheskiel/mantle-rwa-distribution-tracker)
 -- Weekly count of distinct external wallets holding ANY xStock (exact end-of-week balance > 0),
 -- plus wallets holding their first xStock that week. Issuer + zero address excluded.

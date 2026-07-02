@@ -1,10 +1,10 @@
--- Q3: External float over time — the core "distribution" metric (HERO chart)
+-- Q3: External float over time. The core distribution metric (hero chart).
 -- Live: https://dune.com/queries/7863645  (dashboard: https://dune.com/yeheskiel/mantle-rwa-distribution-tracker)
 -- % of net supply held OUTSIDE the issuer/deployer wallet. Shows whether the token is being
 -- distributed or just minted-and-parked. Dashboard widget: area chart (day vs external_float_pct).
 -- Params:
---   {{token_address}}  — default 0x68fa48b1c2fe52b3d776e1953e0e782b5044ce28 (SPCXx)
---   {{issuer_wallet}}  — default 0x5f7a4c11bde4f218f0025ef444c369d838ffa2ad (Backed/xStocks deployer)
+--   {{token_address}}: default 0x68fa48b1c2fe52b3d776e1953e0e782b5044ce28 (SPCXx)
+--   {{issuer_wallet}}: default 0x5f7a4c11bde4f218f0025ef444c369d838ffa2ad (Backed/xStocks deployer)
 -- supply_delta uses the zero-address side of each Transfer (mint = +, burn = -). Exact decimal math.
 WITH flows AS (
     SELECT block_time, bytearray_substring(topic1, 13, 20) AS holder,

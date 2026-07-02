@@ -1,9 +1,9 @@
--- Q13: Bybit-window cohort retention — did the spike users stick? (NEW)
+-- Q13: Bybit-window cohort retention. Did the spike users stick?
 -- Live: https://dune.com/queries/7866325  (dashboard: https://dune.com/yeheskiel/mantle-rwa-distribution-tracker)
 -- Of wallets whose FIRST xStock week fell in the Bybit-integration window
--- (Apr 13 – May 10, 2026), how many still hold any xStock at the latest week?
+-- (April 13 to May 10, 2026), how many still hold any xStock at the latest week?
 -- Result 2026-07-02: 802 of 816 = **98.3% retention**. CEX-gateway users are
--- high-quality, buy-and-hold demand — not quest farmers.
+-- high-quality, buy-and-hold demand, not quest farmers.
 WITH universe AS (
     SELECT contract_address
     FROM tokens.erc20

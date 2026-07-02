@@ -2,7 +2,7 @@
 -- Live: https://dune.com/queries/7863658  (dashboard: https://dune.com/yeheskiel/mantle-rwa-distribution-tracker)
 -- Dashboard widget: stacked column (weekly trades per venue).
 -- Coverage (verified 2026-07-02): dex.trades covers merchant_moe, agni, uniswap, fusionx on Mantle.
---   * Fluxion is NOT in the spellbook yet — state this on the dashboard.
+--   * Fluxion is not in the spellbook yet; state this on the dashboard.
 --   * SPCXx is NOT in the DEX price oracle, so amount_usd is NULL for it. We therefore chart
 --     TRADE COUNTS (and unique traders), not USD. Swap to volume_usd for priced tokens.
 -- Param: {{token_address}}

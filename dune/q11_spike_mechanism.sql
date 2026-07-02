@@ -1,8 +1,8 @@
--- Q11: April-spike mechanism — HOW did the Apr 13 – May 10, 2026 cohort get their first xStock? (NEW)
+-- Q11: April-spike mechanism. How did the April 13 to May 10, 2026 cohort get their first xStock?
 -- Live: https://dune.com/queries/7866292  (dashboard: https://dune.com/yeheskiel/mantle-rwa-distribution-tracker)
 -- Groups the cohort's entry transfers by token, tx target contract, and token source.
 -- Result: dominant pattern = tx_to is the TOKEN CONTRACT itself with self_initiated = 0
--- (a third party calling token.transfer() straight to the wallet) — the CEX-withdrawal
+-- (a third party calling token.transfer() straight to the wallet), which is the CEX-withdrawal
 -- fingerprint. Attribution: Bybit enabled xStocks deposits/withdrawals on Mantle on
 -- Apr 10, 2026; the spike starts Apr 13 (first Monday after) and ends when the wave fades.
 WITH universe AS (

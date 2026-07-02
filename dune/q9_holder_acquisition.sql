@@ -1,4 +1,4 @@
--- Q9: Holder acquisition — do xStocks bring NEW wallets to Mantle? (NEW)
+-- Q9: Holder acquisition. Do xStocks bring new wallets to Mantle?
 -- Live: https://dune.com/queries/7865842  (dashboard: https://dune.com/yeheskiel/mantle-rwa-distribution-tracker)
 -- For every wallet currently holding any xStock (exact balance > 0, issuer excluded):
 --   first_active  = first day the wallet initiated any tx that emitted a log (mantle.logs.tx_from)

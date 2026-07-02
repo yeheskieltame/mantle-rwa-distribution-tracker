@@ -1,4 +1,4 @@
--- Q5: xStock ecosystem league on Mantle — the thesis at ecosystem scale (FLAGSHIP)
+-- Q5: xStock ecosystem league on Mantle. The thesis at ecosystem scale.
 -- Live: https://dune.com/queries/7863671  (dashboard: https://dune.com/yeheskiel/mantle-rwa-distribution-tracker)
 -- Universe = every token on Mantle whose NAME contains "xStock" (Backed's tokenized equities).
 -- We match on name, NOT `symbol LIKE '%x'` (that catches junk like 100x / 55X / Arcane Flux).

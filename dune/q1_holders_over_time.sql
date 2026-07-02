@@ -1,7 +1,7 @@
 -- Q1: Holder count over time for one RWA token on Mantle
 -- Live: https://dune.com/queries/7863651  (dashboard: https://dune.com/yeheskiel/mantle-rwa-distribution-tracker)
 -- Dashboard widget: line chart (day vs holders, and holders holding >= 1 whole token)
--- Param: {{token_address}} — default SPCXx 0x68fa48b1c2fe52b3d776e1953e0e782b5044ce28
+-- Param: {{token_address}}, default SPCXx 0x68fa48b1c2fe52b3d776e1953e0e782b5044ce28
 -- Table: mantle.logs (raw, always available; no decoding needed). Exact decimal(38,0) balances.
 WITH flows AS (
     SELECT block_time, bytearray_substring(topic1, 13, 20) AS holder,

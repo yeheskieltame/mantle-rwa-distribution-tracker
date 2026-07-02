@@ -1,11 +1,11 @@
--- Q12: April-spike distributor identity — WHO sent the cohort their first xStocks? (NEW)
+-- Q12: April-spike distributor identity. Who sent the cohort their first xStocks?
 -- Live: https://dune.com/queries/7866312  (dashboard: https://dune.com/yeheskiel/mantle-rwa-distribution-tracker)
 -- Groups the cohort's direct-transfer entries (tx_to = token contract) by sender wallet.
 -- Result: top sender 0x5888...836c reached 462 of ~816 cohort wallets, sent 7 xStocks,
--- was active EVERY day of Apr 13 – May 10 with varied amounts (stddev 14) — a CEX hot
--- wallet, confirmed as Bybit's Mantle wallet via Bybit Proof-of-Reserves reports.
--- Long tail of smaller senders shows recurring exact medians (e.g. 10.0772 across
--- several wallets) — programmatic upstream payouts.
+-- was active every day of April 13 to May 10 with varied amounts (stddev 14). That is a CEX
+-- hot wallet, confirmed as Bybit's Mantle wallet via Bybit Proof-of-Reserves reports.
+-- The long tail of smaller senders shows recurring exact medians (for example 10.0772
+-- across several wallets), which points to programmatic upstream payouts.
 WITH universe AS (
     SELECT contract_address, MAX(symbol) AS symbol
     FROM tokens.erc20

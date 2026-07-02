@@ -1,4 +1,4 @@
--- Q8: xStock ecosystem summary — adoption-gap headline counters (NEW)
+-- Q8: xStock ecosystem summary. Adoption-gap headline counters.
 -- Live: https://dune.com/queries/7863679  (dashboard: https://dune.com/yeheskiel/mantle-rwa-distribution-tracker)
 -- Reads Q5's latest result via a cross-query reference (query_7863671) so the counters always
 -- match the league table. Dashboard widgets: counters (issued / >=10 holders / distributed).
