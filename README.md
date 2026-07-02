@@ -3,10 +3,13 @@
 Dune dashboard + automation agent that measure **distribution, not just supply**, for tokenized real-world assets (RWA) on Mantle. Follow-up to the Research Challenge thesis: **supply ≠ adoption.**
 
 ### ▶ Live dashboard: https://dune.com/yeheskiel/mantle-rwa-distribution-tracker
+### ▶ Research findings: [FINDINGS.md](FINDINGS.md)
 
 **Headline (Mantle, snapshot 2026-07-02):**
 - **368** xStocks issued on Mantle — only **1** (NVDAx) clears the 500-holder distribution bar; **15** have ≥10 holders.
-- **SPCXx** (SpaceX xStock): 30,000 net supply, 21 days live, **99.2% in the issuer wallet → external float 0.8%**, 26 holders.
+- **926** wallets hold any xStock — **88% acquired in a single 4-week spike** (mid-Apr → mid-May 2026); single-digit weekly growth since.
+- **45.6%** of holder wallets arrived on Mantle *with* their first xStock (421 new wallets in 7 months); the rest are OG Mantle users (median **459 days** old).
+- **SPCXx** (SpaceX xStock): 30,000 net supply, **99.2% in the issuer wallet → external float 0.8%**, 26 holders.
 
 *The supply is here. The demand — 26 million Indonesian retail investors among them — is not. That gap is the opportunity.*
 
@@ -24,6 +27,8 @@ Dashboard sections & queries (all raw `mantle.logs`, exact 256-bit math):
 |---|-------|------|
 | ① | Ecosystem summary — issued vs adopted counters | [7863679](https://dune.com/queries/7863679) |
 | ① | xStock ecosystem league (every xStock, ranked) | [7863671](https://dune.com/queries/7863671) |
+| ① | xStock holders over time — the 4-week spike | [7865851](https://dune.com/queries/7865851) |
+| ① | Holder acquisition — new wallets vs recycled users | [7865842](https://dune.com/queries/7865842) |
 | ② | Concentration (holders, top-1 %, external float, net supply) | [7863618](https://dune.com/queries/7863618) |
 | ② | External float over time *(hero)* | [7863645](https://dune.com/queries/7863645) |
 | ② | Holders over time | [7863651](https://dune.com/queries/7863651) |
@@ -43,11 +48,13 @@ Queries are parameterized (`token_address`, `issuer_wallet`, default SPCXx) — 
 
 ## Automation agent (`agent/`)
 
-Stdlib-only Python (no `pip` — students can run it as-is). One run does three jobs:
+Stdlib-only Python (no `pip` — students can run it as-is). Tracks **7 xStocks** out of the box (NVDAx, TSLAx, CRCLx, GOOGLx, COINx, SPCXx, AAPLx). One run does three jobs:
 
-- **DIGEST** — weekly markdown brief to `agent/reports/YYYY-MM-DD.md` (raw material for a weekly X thread).
-- **ALERTS** — webhook ping when a falsifiable threshold is crossed (top wallet < 75%, top-1 drops ≥1 pt, holders jump ≥25).
+- **DIGEST** — weekly markdown brief to `agent/reports/YYYY-MM-DD.md` (raw material for a weekly X thread). Holder counts are exact up to 1,000 (paginated Routescan; `N+` = lower bound beyond that).
+- **ALERTS** — webhook ping when a falsifiable threshold is crossed: top wallet < 75% 🚨, holders reach 500+ 🎯, top-1 drops ≥1 pt 📉, holders jump ≥25 📈. *(On its first multi-token run the agent detected NVDAx crossing both thresholds — see [FINDINGS.md](FINDINGS.md) F7.)*
 - **SYNC** — cross-checks the live Routescan number against the Dune concentration query and flags divergence > 2 pts.
+
+The alert path is end-to-end tested: a local stdlib webhook receiver + seeded state force every alert type through a real HTTP POST.
 
 Run locally: `python3 agent/tracker_agent.py`
 
