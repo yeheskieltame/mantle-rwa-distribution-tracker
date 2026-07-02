@@ -7,7 +7,8 @@ Dune dashboard + automation agent that measure **distribution, not just supply**
 
 **Headline (Mantle, snapshot 2026-07-02):**
 - **368** xStocks issued on Mantle — only **1** (NVDAx) clears the 500-holder distribution bar; **15** have ≥10 holders.
-- **926** wallets hold any xStock — **88% acquired in a single 4-week spike** (mid-Apr → mid-May 2026); single-digit weekly growth since.
+- **926** wallets hold any xStock — **88% acquired in a single 4-week spike**, now attributed on-chain to the **Bybit ⇄ Mantle xStocks gateway opening (Apr 10, 2026)**: Bybit's Mantle hot wallet delivered first xStocks to 462 of the 816 cohort wallets, then the wave stopped.
+- Those users stuck: **98.3% of the Bybit-window cohort still holds** — CEX-gateway demand is buy-and-hold, not farming. Meanwhile LP incentives (Project X, 100k MNT) produced churn, not holders.
 - **45.6%** of holder wallets arrived on Mantle *with* their first xStock (421 new wallets in 7 months); the rest are OG Mantle users (median **459 days** old).
 - **SPCXx** (SpaceX xStock): 30,000 net supply, **99.2% in the issuer wallet → external float 0.8%**, 26 holders.
 
@@ -29,6 +30,9 @@ Dashboard sections & queries (all raw `mantle.logs`, exact 256-bit math):
 | ① | xStock ecosystem league (every xStock, ranked) | [7863671](https://dune.com/queries/7863671) |
 | ① | xStock holders over time — the 4-week spike | [7865851](https://dune.com/queries/7865851) |
 | ① | Holder acquisition — new wallets vs recycled users | [7865842](https://dune.com/queries/7865842) |
+| ① | Spike mechanism — how the cohort got its first xStock | [7866292](https://dune.com/queries/7866292) |
+| ① | Spike distributors — the Bybit hot wallet identified | [7866312](https://dune.com/queries/7866312) |
+| ① | Bybit-window cohort retention (98.3%) | [7866325](https://dune.com/queries/7866325) |
 | ② | Concentration (holders, top-1 %, external float, net supply) | [7863618](https://dune.com/queries/7863618) |
 | ② | External float over time *(hero)* | [7863645](https://dune.com/queries/7863645) |
 | ② | Holders over time | [7863651](https://dune.com/queries/7863651) |
