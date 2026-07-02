@@ -2,7 +2,7 @@
 
 **TL;DR: Mantle has solved RWA *supply* and not RWA *distribution*. 368 tokenized US equities are live on-chain; exactly 1 is genuinely distributed. 926 wallets hold any of them — 88% arrived in a single four-week window, and that window is now attributed: it was the Bybit ⇄ Mantle xStocks gateway opening (Apr 10, 2026). Those users are excellent demand — 98.3% still hold — but when the launch moment passed, acquisition collapsed to single digits per week. Mantle's RWA demand engine is one CEX gateway that only fires during moments. That is the gap — and it is fixable.**
 
-*All numbers measured on-chain from raw `mantle.logs` Transfer events (coverage: Mantle genesis 2023-07-02 → 2026-07-02) in exact 256-bit integer arithmetic, cross-validated against the Routescan API (matched to the decimal). Snapshot: 2026-07-02. Every finding links to a public, re-runnable Dune query. Not financial advice.*
+*All numbers measured on-chain from raw `mantle.logs` Transfer events (coverage: Mantle genesis 2023-07-02 → 2026-07-02) in exact 256-bit integer arithmetic, cross-validated against the Routescan API (concentration matched to the decimal; holder counts within ~3%, live data being fresher). Snapshot: 2026-07-02. Every finding links to a public, re-runnable Dune query. Not financial advice.*
 
 **Live dashboard:** https://dune.com/yeheskiel/mantle-rwa-distribution-tracker
 
@@ -12,11 +12,11 @@
 
 ### F1 — 368 issued, 1 distributed
 Backed's xStocks put **368 tokenized US equities** on Mantle (family launched 2025-12-01). Against falsifiable distribution thresholds (holders > 500, top-1 wallet < 75%):
-- **1 token passes: NVDAx** (629 holders, top-1 74.55%)
+- **1 token passes: NVDAx** — 612 holders / top-1 74.55% on the Dune snapshot; 629 holders on the same-day live Routescan check (both sources agree the thresholds are crossed)
 - **15 of 368 (4.1%)** have even 10 holders
 - The median xStock has ~1–3 holders — *issued, not adopted*
 
-→ [League query 7863671](https://dune.com/queries/7863671) · [Summary 7863679](https://dune.com/queries/7863679)
+→ [League query 7863671](https://dune.com/queries/7863671) · [Summary 7863679](https://dune.com/queries/7863679) · live cross-check: [agent digest 2026-07-02](https://github.com/yeheskieltame/mantle-rwa-distribution-tracker/blob/main/agent/reports/2026-07-02.md)
 
 ### F2 — Adoption is event-driven — and the event is now identified: the Bybit gateway
 Weekly first-time-holder counts show three regimes:
@@ -74,14 +74,27 @@ The measurement infrastructure gap is itself an adoption blocker: builders can't
 ### F7 — First threshold crossing, detected by the tracker
 On its first multi-token run (2026-07-02 11:40 UTC), the automation agent alerted that **NVDAx crossed both falsifiable thresholds** (top-1 74.553% < 75%; holders 629 > 500) — the first xStock on Mantle to become *distributed* by pre-registered criteria. The framework works: thresholds set in advance, crossing detected automatically, receipts on-chain.
 
+→ [Agent digest 2026-07-02 (committed by CI)](https://github.com/yeheskieltame/mantle-rwa-distribution-tracker/blob/main/agent/reports/2026-07-02.md) · [CI run history](https://github.com/yeheskieltame/mantle-rwa-distribution-tracker/actions)
+
 ---
 
-## What Mantle can do with this
+## Recommendations for Mantle — each with the why and the evidence
 
-1. **Make the Bybit gateway always-on, not launch-day.** The only funnel that has ever produced RWA holders at scale on Mantle is CEX → on-chain withdrawal (F2), and the users it delivers are 98.3%-retentive (F2b). Each active gateway week ≈ +200–350 sticky holders. Recurring, localized CEX campaigns — Indonesia's 26M retail stock investors are the natural wedge, and Bybit already operates there — would compound what is currently a one-off.
-2. **Rebalance incentives from liquidity to distribution.** Project X (100k MNT) bought pool depth and churn, not holders (F2b, F5). A fraction of that budget aimed at first-holder acquisition through the gateway would move the actual KPI.
-3. **Fix the measurement stack.** Get Fluxion into the Dune spellbook and xStocks into price feeds (F6). Today nobody — including Mantle — can quote USD liquidity for tokenized equities on Mantle.
-4. **Adopt *external float %* and *holders* as the RWA KPIs, not TVL/supply.** Supply is an issuer decision (F4); distribution is the market's verdict. The thresholds here (>500 holders, top-1 <75%) are falsifiable and now continuously monitored — NVDAx crossed both during the Bybit window (F1, F7), which is exactly the causal chain working once.
+### R1 — Make the CEX gateway always-on, not launch-day
+**Why:** the only funnel that has ever produced RWA holders at scale on Mantle is CEX → on-chain withdrawal, and it only ran while the launch moment lasted. Each active gateway week delivered ≈ +200–350 holders; when it cooled, acquisition fell to single digits. Recurring, localized gateway campaigns — Indonesia's ~26M retail stock investors are the natural wedge, and Bybit already operates there — would compound what is currently a one-off.
+**Evidence:** 88% of all holders arrived Apr 13 – May 10 ([trend 7865851](https://dune.com/queries/7865851)); the deliveries came from Bybit's Mantle hot wallet ([distributors 7866312](https://dune.com/queries/7866312), [Bybit PoR](https://www.bybit.com/common-static/cht-static/por/Bybit_PoR_Audit_2026_Feb_26.pdf)); the window opens right after the [Apr 10 Bybit×Mantle announcement](https://announcements.bybit.com/en/article/bybit-now-supports-xstocks-deposits-and-withdrawals-on-mantle-bltd6af69aacd874633/); post-window growth is +1–11/week ([trend 7865851](https://dune.com/queries/7865851)).
+
+### R2 — Rebalance incentives from liquidity to first-holder acquisition
+**Why:** the two experiments the ecosystem has already run point the same way. The CEX-gateway users cost no incentives and 98.3% of them still hold; the LP-rewards campaign (Project X, up to 100k MNT) produced pool depth and trading churn but ~zero new holders. Budget follows what it measures — right now it buys liquidity, not distribution.
+**Evidence:** retention 802/816 = 98.3% ([retention 7866325](https://dune.com/queries/7866325)); SPCXx post-launch = thousands of transfers but ≤19 active receivers/day and 26 holders ([activity 7863657](https://dune.com/queries/7863657), [concentration 7863618](https://dune.com/queries/7863618)); the June SPCXx launch shipped with [Project X LP rewards](https://chainwire.org/2026/06/12/mantle-and-xstocks-bring-tokenized-spacex-spcxx-to-fluxion-merchant-moe-as-historys-largest-ipo-goes-live/) yet the holder trend barely moved that month ([trend 7865851](https://dune.com/queries/7865851)).
+
+### R3 — Fix the measurement stack (Fluxion indexing + xStock price feeds)
+**Why:** builders and BD cannot optimize what they cannot see. Mantle's flagship RWA venue is invisible to the standard analytics stack, and tokenized-equity liquidity cannot be quoted in USD at all — this study had to fall back to trade counts.
+**Evidence:** `dex.trades` on Mantle covers merchant_moe / agni / uniswap / fusionx only — **no Fluxion** — and `amount_usd` is NULL for xStock trades ([DEX 7863658](https://dune.com/queries/7863658); methodology notes in the [repo README](https://github.com/yeheskieltame/mantle-rwa-distribution-tracker#methodology--honesty-notes)).
+
+### R4 — Adopt *external float %* and *holders* as the RWA KPIs, not TVL/supply
+**Why:** supply is an issuer decision — SPCXx's entire supply history is one 150k mint and one 120k burn — so supply-side KPIs measure the issuer, not the market. Distribution metrics are falsifiable, cheap to monitor continuously, and they already caught the one genuine success.
+**Evidence:** SPCXx mint/burn history ([7863661](https://dune.com/queries/7863661)) vs external float stuck at 0.8% ([7863645](https://dune.com/queries/7863645)); NVDAx crossing both thresholds was detected automatically by the tracker's first multi-token run ([agent digest + alerts, 2026-07-02](https://github.com/yeheskieltame/mantle-rwa-distribution-tracker/blob/main/agent/reports/2026-07-02.md)) — and the crossing dates to the Bybit window ([trend 7865851](https://dune.com/queries/7865851)), the causal chain working end-to-end once.
 
 ## Reuse this research
 
@@ -102,5 +115,34 @@ Everything is public and parameterized:
 - Retention is measured as "still holds any xStock balance > 0", not "still active on Mantle"; a holder can be retained and dormant.
 
 ---
+
+## Evidence index — every number, one click away
+
+**Dashboard (all panels):** https://dune.com/yeheskiel/mantle-rwa-distribution-tracker
+
+| # | Dune query (public, re-runnable) | Supports |
+|---|---|---|
+| [7863679](https://dune.com/queries/7863679) | Ecosystem summary counters (368 / 15 / 1) | F1 |
+| [7863671](https://dune.com/queries/7863671) | xStock league — every token ranked, verdicts | F1 |
+| [7865851](https://dune.com/queries/7865851) | Holders over time — the 4-week window, 926 total | F2, R1, R2, R4 |
+| [7865842](https://dune.com/queries/7865842) | Holder acquisition — 45.6% arrived with first xStock, median 459-day OGs | F3 |
+| [7866292](https://dune.com/queries/7866292) | Spike entry mechanism — CEX-withdrawal fingerprint | F2, R1 |
+| [7866312](https://dune.com/queries/7866312) | Spike distributors — Bybit hot wallet `0x5888…836c`, 462/816 wallets | F2, R1 |
+| [7866325](https://dune.com/queries/7866325) | Bybit-window cohort retention — 98.3% | F2b, R2 |
+| [7863618](https://dune.com/queries/7863618) | Concentration (parameterized; SPCXx default 99.2% top-1) | F4, R2 |
+| [7863645](https://dune.com/queries/7863645) | External float over time (SPCXx 0 → 0.8%) | F4, R4 |
+| [7863651](https://dune.com/queries/7863651) | Holders over time, single token | F4 |
+| [7863661](https://dune.com/queries/7863661) | Mint / burn / net supply (one mint, one burn) | F4, R4 |
+| [7863657](https://dune.com/queries/7863657) | Daily activity — transfers vs distinct wallets | F5, R2 |
+| [7863658](https://dune.com/queries/7863658) | DEX activity — Merchant Moe only; `amount_usd` NULL | F6, R3 |
+
+**External sources**
+- [Bybit announcement — xStocks deposits & withdrawals on Mantle (Apr 10, 2026)](https://announcements.bybit.com/en/article/bybit-now-supports-xstocks-deposits-and-withdrawals-on-mantle-bltd6af69aacd874633/)
+- [The Block — Bybit and Backed partner to bring tokenized stocks to Mantle](https://www.theblock.co/post/378030/bybit-backed-xstocks-tokenized-nvidia-mstr-mantle)
+- [Mantle × Bybit × Backed joint press release (PR Newswire)](https://www.prnewswire.com/news-releases/mantle-becomes-one-of-the-first-ethereum-l2s-to-bring-tokenized-equities-to-on-chain-liquidity-with-xstocks-and-bybit-302739354.html)
+- [Bybit Proof-of-Reserves audit (Mantle wallets, incl. `0x5888…836c`)](https://www.bybit.com/common-static/cht-static/por/Bybit_PoR_Audit_2026_Feb_26.pdf)
+- [Chainwire — SPCXx live on Fluxion & Merchant Moe; Project X, up to 100k MNT LP rewards (Jun 12, 2026)](https://chainwire.org/2026/06/12/mantle-and-xstocks-bring-tokenized-spacex-spcxx-to-fluxion-merchant-moe-as-historys-largest-ipo-goes-live/)
+- Routescan v2 API (live holder pagination & cross-checks): `api.routescan.io/v2/network/mainnet/evm/5000/…`
+- [Agent digests, committed by CI](https://github.com/yeheskieltame/mantle-rwa-distribution-tracker/tree/main/agent/reports) · [CI runs](https://github.com/yeheskieltame/mantle-rwa-distribution-tracker/actions)
 
 *Author: Yeheskiel Yunus Tame ([@YeheskielTame](https://x.com/YeheskielTame)) — UKDW Blockchain Club, OwnaFarm. Part of the Mantle Research Challenge. Not financial advice.*

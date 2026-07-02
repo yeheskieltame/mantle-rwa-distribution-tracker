@@ -24,21 +24,23 @@ The **hero metric is external float %** — the share of net supply held *outsid
 
 Dashboard sections & queries (all raw `mantle.logs`, exact 256-bit math):
 
-| # | Query | Live |
+Dashboard sections: **① the adoption gap** · **② attribution — who opened the tap** · **③ single-token deep-dive** (token selector) · **④ issuer-driven supply** · **⑤ activity & liquidity**. Every finding in [FINDINGS.md](FINDINGS.md) has a live panel:
+
+| § | Query | Live |
 |---|-------|------|
 | ① | Ecosystem summary — issued vs adopted counters | [7863679](https://dune.com/queries/7863679) |
 | ① | xStock ecosystem league (every xStock, ranked) | [7863671](https://dune.com/queries/7863671) |
 | ① | xStock holders over time — the 4-week spike | [7865851](https://dune.com/queries/7865851) |
 | ① | Holder acquisition — new wallets vs recycled users | [7865842](https://dune.com/queries/7865842) |
-| ① | Spike mechanism — how the cohort got its first xStock | [7866292](https://dune.com/queries/7866292) |
-| ① | Spike distributors — the Bybit hot wallet identified | [7866312](https://dune.com/queries/7866312) |
-| ① | Bybit-window cohort retention (98.3%) | [7866325](https://dune.com/queries/7866325) |
-| ② | Concentration (holders, top-1 %, external float, net supply) | [7863618](https://dune.com/queries/7863618) |
-| ② | External float over time *(hero)* | [7863645](https://dune.com/queries/7863645) |
-| ② | Holders over time | [7863651](https://dune.com/queries/7863651) |
-| ③ | Mint / burn / net supply over time | [7863661](https://dune.com/queries/7863661) |
-| ④ | Daily activity | [7863657](https://dune.com/queries/7863657) |
-| ④ | DEX activity (Merchant Moe) | [7863658](https://dune.com/queries/7863658) |
+| ② | Spike mechanism — how the cohort got its first xStock | [7866292](https://dune.com/queries/7866292) |
+| ② | Spike distributors — the Bybit hot wallet identified | [7866312](https://dune.com/queries/7866312) |
+| ② | Bybit-window cohort retention (98.3%) | [7866325](https://dune.com/queries/7866325) |
+| ③ | Concentration (holders, top-1 %, external float, net supply) | [7863618](https://dune.com/queries/7863618) |
+| ③ | External float over time *(hero)* | [7863645](https://dune.com/queries/7863645) |
+| ③ | Holders over time | [7863651](https://dune.com/queries/7863651) |
+| ④ | Mint / burn / net supply over time | [7863661](https://dune.com/queries/7863661) |
+| ⑤ | Daily activity | [7863657](https://dune.com/queries/7863657) |
+| ⑤ | DEX activity (Merchant Moe) | [7863658](https://dune.com/queries/7863658) |
 
 Queries are parameterized (`token_address`, `issuer_wallet`, default SPCXx) — fork any of them and change the parameter to track a different RWA.
 
