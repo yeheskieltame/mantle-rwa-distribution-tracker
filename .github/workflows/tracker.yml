@@ -7,8 +7,7 @@ name: RWA Distribution Tracker
 
 on:
   schedule:
-    - cron: "0 1 * * 1"    # Monday 01:00 UTC (08:00 WIB) — full weekly digest
-    - cron: "0 1 * * 2-7"  # Tue–Sun 01:00 UTC — daily alert check
+    - cron: "0 1 * * *"    # daily 01:00 UTC (08:00 WIB); Monday = full digest, other days = alert check
   workflow_dispatch: {}     # manual "Run workflow" button — always a full digest
 
 permissions:
