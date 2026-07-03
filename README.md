@@ -56,7 +56,7 @@ Queries are parameterized (`token_address`, `issuer_wallet`; default SPCXx). For
 
 A drop-in Agent Skill that turns any AI assistant into a Mantle RWA research analyst. `SKILL.md` carries the four-metric framework (minted supply, external float, holder breadth, usable liquidity), the full data-source map (free live APIs plus the 13 public Dune queries above), the attribution method for demand-side questions, and honest interpretation rules. The bundled `scripts/rwa_brief.py` (standard library only) fetches live numbers and emits a markdown brief.
 
-To use it: copy `skill/mantle-rwa-research/` into your assistant's skills directory, or paste `SKILL.md` as instructions into any agent runtime. Ask for "an RWA distribution brief for Mantle" and it knows the sources, the math, and the caveats.
+To use it: copy `skill/mantle-rwa-research/` into your assistant's skills directory, or paste `SKILL.md` as instructions into any agent runtime. Ask for "an RWA distribution brief for Mantle" and it knows the sources, the math, and the caveats. Step-by-step setup with expected outputs: [WALKTHROUGH.md](WALKTHROUGH.md), Parts C and D.
 
 ## Automation agent (`agent/`)
 
@@ -70,7 +70,7 @@ The alert path is tested end to end: a local standard-library webhook receiver p
 
 Run locally: `python3 agent/tracker_agent.py`
 
-Automation runs free on GitHub Actions; the workflow ships at `.github/workflows/tracker.yml`. It produces a full digest every Monday at 08:00 WIB and an alert check on the other days, and it has a manual "Run workflow" button. Optional repository secrets: `ALERT_WEBHOOK_URL` (Discord or Slack) and `DUNE_API_KEY` (enables the sync check; without it the agent quietly uses Routescan only).
+Automation runs free on GitHub Actions; the workflow ships at `.github/workflows/tracker.yml`. It produces a full digest every Monday at 08:00 WIB and an alert check on the other days, and it has a manual "Run workflow" button. Optional repository secrets: `ALERT_WEBHOOK_URL` (Discord or Slack) and `DUNE_API_KEY` (enables the sync check; without it the agent quietly uses Routescan only). To deploy this on your own fork, including the Actions enablement step people usually miss, follow [WALKTHROUGH.md](WALKTHROUGH.md), Parts E and F.
 
 ## Add a new token
 
