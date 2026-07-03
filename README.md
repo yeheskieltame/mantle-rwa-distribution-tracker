@@ -50,6 +50,12 @@ Queries are parameterized (`token_address`, `issuer_wallet`; default SPCXx). For
 - DEX data: `dex.trades` covers Merchant Moe, Agni, Uniswap and FusionX on Mantle. Fluxion is not indexed yet. SPCXx is not in the DEX price oracle, so its DEX panel shows trade counts rather than USD.
 - Every number carries its source and timestamp. Not financial advice.
 
+## Agent Skill (`skill/mantle-rwa-research/`)
+
+A drop-in Agent Skill that turns any AI assistant into a Mantle RWA research analyst. `SKILL.md` carries the four-metric framework (minted supply, external float, holder breadth, usable liquidity), the full data-source map (free live APIs plus the 13 public Dune queries above), the attribution method for demand-side questions, and honest interpretation rules. The bundled `scripts/rwa_brief.py` (standard library only) fetches live numbers and emits a markdown brief.
+
+To use it: copy `skill/mantle-rwa-research/` into your assistant's skills directory, or paste `SKILL.md` as instructions into any agent runtime. Ask for "an RWA distribution brief for Mantle" and it knows the sources, the math, and the caveats.
+
 ## Automation agent (`agent/`)
 
 Python with the standard library only (no pip, so students can run it as-is). It tracks seven xStocks out of the box (NVDAx, TSLAx, CRCLx, GOOGLx, COINx, SPCXx, AAPLx). One run does three jobs:
