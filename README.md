@@ -6,6 +6,8 @@ Live dashboard: https://dune.com/yeheskiel/mantle-rwa-distribution-tracker
 
 Research findings with full sources: [FINDINGS.md](FINDINGS.md)
 
+New here? Follow the step-by-step walkthrough, from reading the dashboard to deploying your own autonomous monitor in about 30 minutes: [WALKTHROUGH.md](WALKTHROUGH.md)
+
 Headline results (Mantle, snapshot 2026-07-02):
 
 - 368 xStocks issued on Mantle. Only one (NVDAx) clears the 500-holder distribution bar; 15 have at least 10 holders.
