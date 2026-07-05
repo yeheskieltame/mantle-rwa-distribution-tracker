@@ -42,10 +42,10 @@
     "external_float_pct": 0.752
   },
   "AAPLx": {
-    "holders": 27,
+    "holders": 28,
     "holders_exact": true,
-    "top1_pct": 90.892,
-    "issuer_pct": 90.892,
-    "external_float_pct": 9.108
+    "top1_pct": 90.891,
+    "issuer_pct": 90.891,
+    "external_float_pct": 9.109
   }
 }
