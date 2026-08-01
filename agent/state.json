@@ -1,6 +1,6 @@
 {
   "NVDAx": {
-    "holders": 637,
+    "holders": 638,
     "holders_exact": true,
     "top1_pct": 82.81,
     "issuer_pct": 82.81,
@@ -21,7 +21,7 @@
     "external_float_pct": 9.24
   },
   "GOOGLx": {
-    "holders": 99,
+    "holders": 100,
     "holders_exact": true,
     "top1_pct": 86.795,
     "issuer_pct": 86.795,
@@ -35,7 +35,7 @@
     "external_float_pct": 9.272
   },
   "SPCXx": {
-    "holders": 35,
+    "holders": 36,
     "holders_exact": true,
     "top1_pct": 99.238,
     "issuer_pct": 99.238,
