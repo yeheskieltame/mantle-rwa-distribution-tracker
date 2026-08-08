@@ -35,7 +35,7 @@
     "external_float_pct": 9.272
   },
   "SPCXx": {
-    "holders": 39,
+    "holders": 40,
     "holders_exact": true,
     "top1_pct": 99.232,
     "issuer_pct": 99.232,
@@ -44,8 +44,8 @@
   "AAPLx": {
     "holders": 40,
     "holders_exact": true,
-    "top1_pct": 90.887,
-    "issuer_pct": 90.887,
-    "external_float_pct": 9.113
+    "top1_pct": 90.941,
+    "issuer_pct": 90.941,
+    "external_float_pct": 9.059
   }
 }
