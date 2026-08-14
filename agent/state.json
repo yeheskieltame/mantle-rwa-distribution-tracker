@@ -1,6 +1,6 @@
 {
   "NVDAx": {
-    "holders": 646,
+    "holders": 648,
     "holders_exact": true,
     "top1_pct": 82.811,
     "issuer_pct": 82.811,
@@ -14,14 +14,14 @@
     "external_float_pct": 18.039
   },
   "CRCLx": {
-    "holders": 329,
+    "holders": 330,
     "holders_exact": true,
     "top1_pct": 90.76,
     "issuer_pct": 90.76,
     "external_float_pct": 9.24
   },
   "GOOGLx": {
-    "holders": 104,
+    "holders": 105,
     "holders_exact": true,
     "top1_pct": 86.795,
     "issuer_pct": 86.795,
@@ -42,7 +42,7 @@
     "external_float_pct": 0.768
   },
   "AAPLx": {
-    "holders": 40,
+    "holders": 41,
     "holders_exact": true,
     "top1_pct": 90.887,
     "issuer_pct": 90.887,
