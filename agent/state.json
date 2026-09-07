@@ -21,11 +21,11 @@
     "external_float_pct": 9.256
   },
   "GOOGLx": {
-    "holders": 111,
+    "holders": 112,
     "holders_exact": true,
-    "top1_pct": 86.835,
-    "issuer_pct": 86.835,
-    "external_float_pct": 13.165
+    "top1_pct": 86.796,
+    "issuer_pct": 86.796,
+    "external_float_pct": 13.204
   },
   "COINx": {
     "holders": 37,
@@ -42,7 +42,7 @@
     "external_float_pct": 0.784
   },
   "AAPLx": {
-    "holders": 46,
+    "holders": 47,
     "holders_exact": true,
     "top1_pct": 90.885,
     "issuer_pct": 90.885,
