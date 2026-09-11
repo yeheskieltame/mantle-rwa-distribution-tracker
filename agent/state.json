@@ -1,10 +1,10 @@
 {
   "NVDAx": {
-    "holders": 664,
+    "holders": 692,
     "holders_exact": true,
-    "top1_pct": 89.451,
-    "issuer_pct": 89.451,
-    "external_float_pct": 10.549
+    "top1_pct": 89.357,
+    "issuer_pct": 89.357,
+    "external_float_pct": 10.643
   },
   "TSLAx": {
     "holders": 336,
