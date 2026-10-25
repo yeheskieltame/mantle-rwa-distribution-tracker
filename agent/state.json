@@ -16,16 +16,16 @@
   "CRCLx": {
     "holders": 338,
     "holders_exact": true,
-    "top1_pct": 90.744,
-    "issuer_pct": 90.744,
-    "external_float_pct": 9.256
+    "top1_pct": 90.727,
+    "issuer_pct": 90.727,
+    "external_float_pct": 9.273
   },
   "GOOGLx": {
-    "holders": 119,
+    "holders": 121,
     "holders_exact": true,
-    "top1_pct": 86.772,
-    "issuer_pct": 86.772,
-    "external_float_pct": 13.228
+    "top1_pct": 86.741,
+    "issuer_pct": 86.741,
+    "external_float_pct": 13.259
   },
   "COINx": {
     "holders": 37,
@@ -42,7 +42,7 @@
     "external_float_pct": 0.809
   },
   "AAPLx": {
-    "holders": 63,
+    "holders": 64,
     "holders_exact": true,
     "top1_pct": 94.221,
     "issuer_pct": 94.221,
