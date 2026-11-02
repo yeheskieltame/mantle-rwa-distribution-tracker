@@ -2,9 +2,9 @@
   "NVDAx": {
     "holders": 732,
     "holders_exact": true,
-    "top1_pct": 89.351,
-    "issuer_pct": 89.351,
-    "external_float_pct": 10.649
+    "top1_pct": 89.355,
+    "issuer_pct": 89.355,
+    "external_float_pct": 10.645
   },
   "TSLAx": {
     "holders": 340,
@@ -14,7 +14,7 @@
     "external_float_pct": 15.432
   },
   "CRCLx": {
-    "holders": 338,
+    "holders": 337,
     "holders_exact": true,
     "top1_pct": 90.702,
     "issuer_pct": 90.702,
