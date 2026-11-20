@@ -1,31 +1,31 @@
 {
   "NVDAx": {
-    "holders": 742,
+    "holders": 743,
     "holders_exact": true,
-    "top1_pct": 93.213,
-    "issuer_pct": 93.213,
-    "external_float_pct": 6.787
+    "top1_pct": 93.21,
+    "issuer_pct": 93.21,
+    "external_float_pct": 6.79
   },
   "TSLAx": {
     "holders": 352,
     "holders_exact": true,
-    "top1_pct": 84.479,
-    "issuer_pct": 84.479,
-    "external_float_pct": 15.521
+    "top1_pct": 84.47,
+    "issuer_pct": 84.47,
+    "external_float_pct": 15.53
   },
   "CRCLx": {
     "holders": 349,
     "holders_exact": true,
-    "top1_pct": 93.621,
-    "issuer_pct": 93.621,
-    "external_float_pct": 6.379
+    "top1_pct": 93.635,
+    "issuer_pct": 93.635,
+    "external_float_pct": 6.365
   },
   "GOOGLx": {
     "holders": 125,
     "holders_exact": true,
-    "top1_pct": 89.118,
-    "issuer_pct": 89.118,
-    "external_float_pct": 10.882
+    "top1_pct": 89.107,
+    "issuer_pct": 89.107,
+    "external_float_pct": 10.893
   },
   "COINx": {
     "holders": 39,
@@ -37,15 +37,15 @@
   "SPCXx": {
     "holders": 37,
     "holders_exact": true,
-    "top1_pct": 99.458,
-    "issuer_pct": 99.458,
-    "external_float_pct": 0.542
+    "top1_pct": 99.455,
+    "issuer_pct": 99.455,
+    "external_float_pct": 0.545
   },
   "AAPLx": {
     "holders": 75,
     "holders_exact": true,
-    "top1_pct": 90.748,
-    "issuer_pct": 90.748,
-    "external_float_pct": 9.252
+    "top1_pct": 90.749,
+    "issuer_pct": 90.749,
+    "external_float_pct": 9.251
   }
 }
