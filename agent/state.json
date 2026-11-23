@@ -5,12 +5,5 @@
     "top1_pct": 96.462,
     "issuer_pct": 96.462,
     "external_float_pct": 3.538
-  },
-  "SPCXx": {
-    "holders": 37,
-    "holders_exact": true,
-    "top1_pct": 99.452,
-    "issuer_pct": 99.452,
-    "external_float_pct": 0.548
   }
 }
